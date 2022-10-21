@@ -18,44 +18,26 @@ const MainContainer = styled.main`
 function App() {
   const [valorCondicional, setValorCondicional] = useState(1)
 
-
   const mudarTela = (valor) => {
     setValorCondicional(valor)
   }
 
   // Resolução do exercício de fixação
-  const renderizaTela = () =>{
-    switch(valorCondicional){
+  const renderizaTela = () => {
+    switch (valorCondicional) {
       case 1:
-        return <TelaLogin mudarTela={mudarTela}/>;
+        return <TelaLogin mudarTela={mudarTela} />;
       case 2:
-        return  <TelaCadastro mudarTela={mudarTela}/>;
+        return <TelaCadastro mudarTela={mudarTela} />;
       case 3:
-        return  <TelaUsuarioCadastrado/>
+        return <TelaUsuarioCadastrado />
     }
   }
-
 
   return (
     <MainContainer >
       <GlobalStyled />
-
-      {/* Exercício de fixação, ultima parte */}
       {renderizaTela()}
-
-      {/* Primeiro exercício de prática guiada, onde mostra uma tela entre duas possiveis telas. */}
-      {/* {valorCondicional === 1? <TelaLogin mudarTela={mudarTela}/> : <TelaCadastro mudarTela={mudarTela}/>} */}
-
-      {/* Ao chegar no exercício de fixação, mostrar/falar que um ternário dentro de outro pode ser confuso
-      e mostrar/falar que não é uma boa prática. 
-      Exemplo de ternario dentro de outro ternario,*/}
-      {/* {valorCondicional === 1? <TelaLogin mudarTela={mudarTela}/> :valorCondicional === 2 ? <TelaCadastro mudarTela={mudarTela}/> : <TelaUsuarioCadastrado/>} */}
-
-
-      {/* Ao abrir o arquivo vai está sendo renderizado desse jeito */}
-      {/* <TelaLogin mudarTela={mudarTela}/>
-      <TelaCadastro mudarTela={mudarTela}/> */}
-
     </MainContainer>
   );
 }
